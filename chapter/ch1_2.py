@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 
-from chapter import load_text_as_series
+from chapter import load_as_series
 import numpy as np
 
 
@@ -38,14 +38,14 @@ def calc_stats(samples):
     return answer1, answer2
 
 # Q1
-q1_answer = calc_stats(load_text_as_series("ch1_2_q1.txt"))
+q1_answer = calc_stats(load_as_series("ch1_2_q1.txt"))
 assert q1_answer[0].avg == q1_answer[1].avg
 assert q1_answer[0].var == q1_answer[1].var
 assert q1_answer[0].std_dev == q1_answer[1].std_dev
 
 
 # Q2
-q2_answer = calc_stats(load_text_as_series("ch1_2_q2.txt"))
+q2_answer = calc_stats(load_as_series("ch1_2_q2.txt"))
 assert q2_answer[0].avg == q2_answer[1].avg
 assert q2_answer[0].var == q2_answer[1].var
 assert q2_answer[0].std_dev == q2_answer[1].std_dev

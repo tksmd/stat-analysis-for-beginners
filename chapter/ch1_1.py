@@ -8,9 +8,9 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 
-from chapter import load_text_as_series
+from chapter import load_as_series
 
-weights = load_text_as_series("ch1_1.txt")
+weights = load_as_series("ch1_1.txt")
 
 # p14
 min_weight = weights.min()
