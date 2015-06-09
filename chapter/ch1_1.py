@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 #
 
-import os
 import numpy as np
 
-from pandas import DataFrame, Series
+from pandas import DataFrame
 import pandas as pd
 
 import matplotlib.pyplot as plt
 
-data_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), "data")
-weights = Series(np.loadtxt(os.path.join(data_dir, "ch1_1.txt")))
+from chapter import load_text_as_series
+
+weights = load_text_as_series("ch1_1.txt")
 
 # p14
 min_weight = weights.min()
