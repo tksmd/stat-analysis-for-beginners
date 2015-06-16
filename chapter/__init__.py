@@ -9,16 +9,15 @@ DATA_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "data")
 
 
 def load_as_series(txt):
-    p = os.path.join(DATA_DIR, txt)
+    return Series(np.loadtxt(get_path(txt)))
+
+
+def load_as_dataframe(csv, opts={}):
+    return pd.read_csv(get_path(csv), **opts)
+
+
+def get_path(file):
+    p = os.path.join(DATA_DIR, file)
     if not os.path.exists(p):
         raise ValueError("%s not found" % p)
-
-    return Series(np.loadtxt(p))
-
-
-def load_as_dataframe(csv):
-    p = os.path.join(DATA_DIR, csv)
-    if not os.path.exists(p):
-        raise ValueError("%s not found" % p)
-
-    return pd.read_csv(p)
+    return p

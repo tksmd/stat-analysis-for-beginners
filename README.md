@@ -15,3 +15,7 @@ To install required package, run pip install as follows
 
     $ ipython --matplotlib
     In [1]: %run chapter/ch1_1.py
+
+To clean namespace in IPython interactive session, run %reset magic command.
+
+    In [2]: %reset -f
