@@ -22,4 +22,5 @@ def direction_filter(positive):
 
 P = sum(1 for _ in filter(direction_filter(True), pairs))
 Q = sum(1 for _ in filter(direction_filter(False), pairs))
+# Kendall tau rank correlation coefficient
 tau = (P - Q) / len(pairs)
