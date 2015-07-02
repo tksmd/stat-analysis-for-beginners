@@ -19,6 +19,9 @@ class Answer(object):
         fmt = "correlation coefficient: %.4f variance x: %.4f variance y: %.4f covariance xy: %.4f"
         return fmt % (self.corr, self.var_x, self.var_y, self.cov,)
 
+    def val(self):
+        return self.corr, self.var_x, self.var_y, self.cov,
+
 
 def calc_stats(df):
     df["xpower"] = df["x"] * df["x"]
@@ -57,10 +60,12 @@ def calc_stats(df):
 # Q1
 df1 = load_as_dataframe("ch1_3_q1.csv")
 q1_answer = calc_stats(df1)
+assert np.allclose(q1_answer[0].val(), q1_answer[1].val())
 
 # Q2
 df2 = load_as_dataframe("ch1_3_q2.csv")
 q2_answer = calc_stats(df2)
+assert np.allclose(q2_answer[0].val(), q2_answer[1].val())
 
 fig = plt.figure(figsize=(10, 6))
 ax1 = fig.add_subplot(121)

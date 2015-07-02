@@ -3,6 +3,8 @@
 
 from chapter import load_as_dataframe
 
+import numpy as np
+
 df = load_as_dataframe("ch1_5.csv", {
     "index_col": "traffic accident"
 })
@@ -19,5 +21,6 @@ odds_ratio1 = p_odds / q_odds
 odds_ratio2 = (df["without seat belt"]["dead"] * df["with seat belt"]["alive"]) / \
               (df["with seat belt"]["dead"] * df["without seat belt"]["alive"])
 
+assert np.allclose(odds_ratio1, odds_ratio2)
 print("odds ratio 1 : %.4f" % odds_ratio1)
 print("odds ratio 2 : %.4f" % odds_ratio2)
