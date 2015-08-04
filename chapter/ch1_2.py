@@ -30,7 +30,7 @@ def calc_stats(samples):
 
     # built-in functions
     # normarized by N-1 as default
-    # see http://pandas.pydata.org/pandas-docs/dev/generated/pandas.Series.var.html
+    # see http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.var.html
     answer2 = Answer(
         avg=samples.mean(),
         var=samples.var()
